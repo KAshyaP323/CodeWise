@@ -1,0 +1,45 @@
+###
+GET http://127.0.0.1:8000/questions/
+Accept: application/json
+
+
+###
+POST http://localhost:8000/questions/
+Content-Type: application/json
+
+{
+  "title": "Fibbonacci series",
+  "language": "python",
+  "difficulty_level": "easy",
+  "topic": "Loops",
+  "notes": "About creation of fibbonacci series",
+  "sample_input": "5",
+  "sample_output": "0 1 1 2 3",   
+  "is_active": true
+}
+
+
+###
+GET http://127.0.0.1:8000/questions/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/questions/2/
+Content-Type: application/json
+
+{
+  "title": "Square root of a number",
+  "language": "python",
+  "difficulty_level": "easy",
+  "topic": "Loops",
+  "notes": "About calculation of square root of a number",
+  "sample_input": "25",
+  "sample_output": "5",   
+  "is_active": true
+}
+
+
+###
+DELETE http://127.0.0.1:8000/questions/3/
+Accept: application/json
