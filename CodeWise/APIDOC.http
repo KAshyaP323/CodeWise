@@ -43,3 +43,36 @@ Content-Type: application/json
 ###
 DELETE http://127.0.0.1:8000/questions/3/
 Accept: application/json
+
+
+###
+GET http://localhost:8000/submissions/
+Accept: application/json
+
+
+###
+POST http://localhost:8000/submissions/
+Content-Type: application/json
+
+{
+  "question_id":2,
+  "answer":"Asnwer 1 of 2",
+  "owner":"Kaushik"
+}
+
+
+
+###
+GET http://localhost:8000/submissions/2
+Accept: application/json
+
+
+###
+PUT http://localhost:8000/submissions/2
+Content-Type: application/json
+
+{
+  "question_id":2,
+  "answer":"Asnwer 1 of 2 by kaushik",
+  "owner":"Kaushik"
+}

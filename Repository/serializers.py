@@ -18,5 +18,5 @@ class SubmissionSerializer(serializers.Serializer):
     answer=serializers.CharField()
     points=serializers.IntegerField(read_only=True)    
     owner=serializers.CharField()
-    remarks=serializers.CharField()
+    remarks=serializers.CharField(read_only=True)
     submission_date=serializers.DateTimeField(read_only=True)
