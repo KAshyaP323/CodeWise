@@ -74,3 +74,10 @@ class SubmissionsRetriveUpdateDeleteView(APIView):
             return Response(data={'Message':'Data updated'})
         else:
             return Response(data=submission_instance.errors)
+
+class EvaluateSubmissionView(APIView):
+    def put(self, request, pk):
+        form_data=request.data
+        SubmissionsDb.objects.filter(id=pk).update(**form_data)
+        return Response(data={"Message":"Evaluated.."})
+            

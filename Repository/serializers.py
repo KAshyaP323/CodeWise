@@ -20,3 +20,9 @@ class SubmissionSerializer(serializers.Serializer):
     owner=serializers.CharField()
     remarks=serializers.CharField(read_only=True)
     submission_date=serializers.DateTimeField(read_only=True)
+
+    def validate(self, validate_data):
+        question_id= validate_data.get("question_id")
+        if not QuestionsDB.objects.filter(id=question_id).exists():
+            raise serializers.ValidationError("Question does not exist....")
+        return validate_data
